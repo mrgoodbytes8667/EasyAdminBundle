@@ -69,7 +69,7 @@ final class EntityFilter implements FilterInterface
                 $id = $filterDataDto->getPrimaryKeyValue();
                 if ($id instanceof AbstractUid) {
                     $queryBuilder->andWhere($orX)
-                        ->setParameter($parameterName, $id->toRfc4122());
+                        ->setParameter($parameterName, $id->toBinary());
                 } else {
                     $queryBuilder->andWhere($orX)
                         ->setParameter($parameterName, $value);
